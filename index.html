@@ -3,127 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APlayer Development</title>
+<title>A Player Development</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
   color: white;
-  scroll-behavior: smooth;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
-  padding: 40px 20px;
-}
-
-h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin-top: 60px;
-  border-bottom: 1px solid #222;
-  padding-bottom: 10px;
-}
-
-p {
-  color: #ccc;
-  line-height: 1.7;
+  padding: 20px;
 }
 
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  animation: fadeIn 1s ease-in;
+  padding: 100px 20px;
 }
 
-.price {
-  font-size: 22px;
-  margin-top: 10px;
-  font-weight: bold;
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #bbb;
+  font-size: 18px;
 }
 
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 15px 30px;
+  padding: 14px 28px;
   background: white;
   color: black;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 6px;
 }
 
-.btn:hover {
-  background: #ddd;
+.section {
+  margin-top: 60px;
 }
 
-.grid {
+.cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 15px;
 }
 
 .card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
-  opacity: 0;
-  transform: translateY(20px);
+  background: #141414;
+  padding: 18px;
+  border-radius: 8px;
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
+.pricing .card {
+  text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.pricing {
+.about {
   display: grid;
   gap: 20px;
 }
 
-.price-card {
-  background: #1a1a1a;
-  padding: 25px;
-  border-radius: 10px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.price-card:hover {
-  transform: scale(1.03);
-}
-
-.highlight {
-  border: 1px solid white;
-}
-
-.about-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.photo-placeholder {
-  background: #1a1a1a;
-  height: 250px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
+.placeholder {
+  height: 200px;
+  background: #141414;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#555;
+  border-radius:8px;
 }
 
 .footer {
@@ -132,11 +85,6 @@ p {
   color: #777;
   margin-top: 60px;
 }
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
 </style>
 </head>
 
@@ -144,114 +92,65 @@ p {
 
 <div class="container">
 
-  <div class="hero">
-    <h1>APlayer Development</h1>
-    <p>Private football coaching focused on performance, confidence, and real match impact</p>
-    <div class="price">Limited weekly availability</div>
-    <a href="YOUR_GOOGLE_FORM_LINK" class="btn">Apply for a Session</a>
-  </div>
-
-  <h2>About</h2>
-  <div class="about-section">
-    <div>
-      <p>
-        APlayer Development provides high-level private football coaching designed to improve players in real match situations.
-      </p>
-      <p>
-        Each session is tailored to the individual, focusing on technical detail, decision making, and building confidence under pressure.
-      </p>
-      <p>
-        The aim is not just to train harder, but to train smarter — developing players who can make an impact in games.
-      </p>
-    </div>
-
-    <div class="photo-placeholder">
-      Your Photo Here
-    </div>
-  </div>
-
-  <h2>Training Focus</h2>
-  <div class="grid">
-    <div class="card">Ball mastery & control</div>
-    <div class="card">1v1 attacking & defending</div>
-    <div class="card">Finishing & composure</div>
-    <div class="card">Game awareness & decision making</div>
-  </div>
-
-  <h2>Sessions</h2>
-  <div class="grid">
-    <div class="card">
-      <strong>1-to-1 Coaching</strong><br><br>
-      Fully personalised sessions focused on rapid player improvement.
-    </div>
-
-    <div class="card">
-      <strong>2-to-1 Sessions</strong><br><br>
-      Train with a partner to increase intensity and competitiveness.
-    </div>
-
-    <div class="card">
-      <strong>45 Minute Sessions</strong><br><br>
-      Short, high-intensity sessions for focused development.
-    </div>
-
-    <div class="card">
-      <strong>Small Group Training</strong><br><br>
-      Game-realistic training with players of similar level.
-    </div>
-  </div>
-
-  <h2>Pricing</h2>
-  <div class="pricing">
-
-    <div class="price-card highlight">
-      <strong>First Session</strong><br><br>
-      £25<br>
-      <small>Introductory session</small>
-    </div>
-
-    <div class="price-card">
-      <strong>1-to-1 Session</strong><br><br>
-      £30<br>
-      <small>60 minutes</small>
-    </div>
-
-    <div class="price-card">
-      <strong>2-to-1 Session</strong><br><br>
-      £50 total<br>
-      <small>Train with a partner</small>
-    </div>
-
-    <div class="price-card">
-      <strong>45 Minute Session</strong><br><br>
-      £25<br>
-      <small>High intensity</small>
-    </div>
-
-  </div>
-
-  <h2>Availability</h2>
-  <p>Limited weekly slots available. Evening and weekend sessions only.</p>
-
-  <div class="footer">
-    <p>Professional, structured, and safe coaching environment.</p>
-  </div>
-
+<div class="hero">
+<h1>A Player Development</h1>
+<p>Private football coaching built for real match performance</p>
+<a href="YOUR_GOOGLE_FORM_LINK" class="btn">Apply for a Session</a>
 </div>
 
-<script>
-// simple scroll animation
-const cards = document.querySelectorAll('.card');
+<div class="section">
+<h2>About</h2>
+<div class="about">
+<p>
+A Player Development delivers focused private coaching designed to improve players in real match situations.
+</p>
+<p>
+Sessions focus on technical detail, decision making, and confidence under pressure.
+</p>
+<p>
+The aim is to develop players who perform in games, not just in training.
+</p>
+<div class="placeholder">Photo Coming Soon</div>
+</div>
+</div>
 
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      card.classList.add('show');
-    }
-  });
-});
-</script>
+<div class="section">
+<h2>Sessions</h2>
+<div class="cards">
+<div class="card">1-to-1 Coaching</div>
+<div class="card">2-to-1 Sessions</div>
+<div class="card">45 Minute Sessions</div>
+<div class="card">Small Group Training</div>
+</div>
+</div>
+
+<div class="section pricing">
+<h2>Pricing</h2>
+<div class="cards">
+<div class="card">First Session – £25</div>
+<div class="card">1-to-1 – £30</div>
+<div class="card">2-to-1 – £50</div>
+<div class="card">45 mins – £25</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Testimonials</h2>
+<div class="card">"Great sessions, big improvement" – Parent</div>
+<div class="card">"Very professional coaching" – Player</div>
+</div>
+
+<div class="section">
+<h2>Booking</h2>
+<p>Limited weekly availability. Apply below to secure a slot.</p>
+<a href="YOUR_GOOGLE_FORM_LINK" class="btn">Book Now</a>
+</div>
+
+<div class="footer">
+Professional coaching environment
+</div>
+
+</div>
 
 </body>
 </html>
